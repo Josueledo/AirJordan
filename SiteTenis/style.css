@@ -61,6 +61,7 @@ body {
                 width: 80%;
                 position: relative;
             }
+       
 
             .shadow {
                 width: 0px;
@@ -93,6 +94,13 @@ body {
             position: relative;
             visibility: visible;
             filter: blur(0);
+            img:hover{
+                animation: move 2s infinite ease-in-out;
+                cursor: pointer;
+            }
+            img:hover .shadow{
+                width: 20px;
+            }
 
             .shadow {
                 width: 600px;
@@ -269,6 +277,32 @@ body {
         font-size: .8rem;
     }
 }
+@keyframes move{
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(20px);
+
+    }
+    100%{
+        transform: translateY(0px);
+
+    }
+}
+@keyframes shadow{
+    0%{
+        width: 60%;
+    }
+    50%{
+        width: 50%;
+
+    }
+    100%{
+        width: 60%;
+
+    }
+}
 
 
 
@@ -304,6 +338,12 @@ body {
             .image-container {
                 img {
                     width: 60%;
+                }
+            }
+            .image-container.prev{
+                opacity: 0;
+                img{
+                    max-width: 60%;
                 }
             }
 
@@ -390,22 +430,49 @@ body {
             }
 
             .image-container {
+                filter: blur(0px);
+
                 img {
-                    width: 60%;
+                    max-width: 80%;
                 }
 
             }
 
             .image-container.active {
                 margin-bottom: 40px;
+                .mark-wrapper{
+
+                    .more.second {
+                        right: -10%;
+                        bottom: 60%;
+                        
+                        p {
+                            left: -120px;
+                            
+                        }
+                        
+                    }
+                    
+                    .more.first {
+                        bottom: 0;
+                        right: -10%;
+                        p {
+                            left: -160px;
+                        }
+                    }
+                }
+
 
                 .shadow {
-                    width: 60%;
+                    margin-top: 15px;
+                    width: 56%;
                     height: 15px;
                 }
 
                 img {
                     position: relative;
+                    width: 90%;
+                    max-width: 100%;
                 }
 
                 .info {
